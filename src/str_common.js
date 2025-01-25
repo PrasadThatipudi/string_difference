@@ -15,11 +15,10 @@ const concatIfEqual = (array, char1, char2) => {
 };
 
 const strCommon = function (str1, str2) {
-  let common = [""];
-
-  for (const index in str1) {
-    common = concatIfEqual(common, str1[index], str2[index]);
-  }
+  const common = [...str1].reduce(
+    (arr, char, i) => concatIfEqual(arr, char, str2[i]),
+    [""]
+  );
 
   return removeAll(common, "");
 };

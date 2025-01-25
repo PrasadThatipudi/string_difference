@@ -10,10 +10,19 @@ describe("strCommon", () => {
 
     assertEquals(strCommon(str1, str2), expected);
   });
+
   it("should return common string from two strings", () => {
     const str1 = "a";
     const str2 = "a";
     const expected = ["a"];
+
+    assertEquals(strCommon(str1, str2), expected);
+  });
+
+  it("should return all common strings from two strings", () => {
+    const str1 = "a b";
+    const str2 = "a,b";
+    const expected = ["a", "b"];
 
     assertEquals(strCommon(str1, str2), expected);
   });
